@@ -1,0 +1,153 @@
+:root{
+  --font-family: 'Outfit', 'Verdana', sans-serif;
+  --main-bg-color: hsl(217, 54%, 11%);
+  --card-bg-color: hsl(216, 50%, 16%);
+  --line-color: hsl(215, 32%, 27%);
+  --emphasis-font-color: hsl(0, 0%, 100%);
+  --main-font-color: hsl(215, 51%, 70%);
+  --active-color: hsl(178, 100%, 50%);
+  --outer-border-radius: 1em;
+  --inner-border-radius: .5em;
+}
+
+html{
+  font-size: 1.125em;
+}
+
+body{
+  background-color: var(--main-bg-color);
+  font-family: var(--font-family);
+  color: var(--main-font-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+p{
+  font-weight: 300;
+}
+
+.nft-preview-card{
+  background-color: var(--card-bg-color);
+  border-radius: var(--outer-border-radius);
+  box-shadow: 0 2em 2em hsla(0, 0%, 0%, .05);
+  padding: 1em;
+  max-width: 18em;
+  margin: 0 auto;
+}
+
+.nft-product{
+  border-radius: .6em;
+  position: relative;
+  background-color: var(--active-color);
+}
+
+.nft-product > *{
+  border-radius: var(--inner-border-radius);
+  display: block;
+}
+
+.nft-product-overlay{
+  object-fit: none;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+.nft-product:hover > .nft-product-image{
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+
+.nft-product:hover > .nft-product-overlay{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.nft-preview-card h1,
+.nft-preview-card strong
+{
+  color: var(--emphasis-font-color);
+}
+
+
+.nft-preview-card h1:hover,
+.nft-preview-card strong:hover
+{
+  color: var(--active-color);
+  cursor: pointer;
+}
+
+.nft-preview-card h1
+{
+  font-weight: 600;
+  margin: 1.2em 0;
+}
+
+.nft-preview-card strong
+{
+  font-weight: 400;
+}
+
+.info{
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2em 0;
+}
+
+.ethereum,
+.clock{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .3em;
+}
+
+.ethereum{
+  color: var(--active-color);
+}
+
+.ethereum:before,
+.clock:before{
+    content: '';
+    height: 1.25em;
+    width: 1em;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ethereum:before{
+  background-image: url('../images/icon-ethereum.svg');
+  background-size: 0.61em 1em;
+}
+
+.clock:before{
+  background-image: url('../images/icon-clock.svg');
+  background-size: 1em 1em;
+}
+
+.nft-preview-card hr{
+  border-color: var(--line-color);
+}
+
+.statement{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.avatar{
+  border-radius: 170893px;
+  border: 1px solid var(--emphasis-font-color);
+  width: 2em;
+  height: 2em;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
